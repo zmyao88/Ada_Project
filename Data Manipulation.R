@@ -15,8 +15,7 @@ attr_name2 <- apply(attr_name, 1, function(x) str_extract(string=x, pattern="--(
 attr_name2 <- ldply(attr_name2, function(x) str_replace_all(x, "(-| |:)", ""))
 
 # assign feature names to data 
-names(data) <- attr_name2[,2]
+names(data) <- attr_name2[,1]
 
 write.csv(data,"C:/Users/Zaiming/Documents/GitHub/Ada_Project/FD.csv")
 
-rm(list=ls())
